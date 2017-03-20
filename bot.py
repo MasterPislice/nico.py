@@ -12,7 +12,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith(prefix) and message.author.id == client.user.id and len(message.content) > 1:
+    if message.content.startswith(prefix) and message.author.id != client.user.id and len(message.content) > 1:
     #if the message starts with "n!", the message is NOT sent by the bot himself and if its not blank
         command = message.content.split()[0][len(prefix):].lower()
         #keep only the actual command from the message, remove the prefix and make it lowercase
