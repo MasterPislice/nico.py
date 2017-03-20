@@ -3,6 +3,8 @@ import asyncio
 
 client = discord.Client()
 
+prefix = "n!"
+
 @client.event
 async def on_ready():
     print('Logged in as')
