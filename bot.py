@@ -18,7 +18,8 @@ async def on_message(message):
         async for log in client.logs_from(message.channel, limit=100):
             if log.author == message.author:
                 counter += 1
-                  
+    elif message.content.startswith('!wew')
+         await client.send_message(message.channel, 'wew lad')
     elif message.content.startswith('!banwho'):
          await client.send_message(message.channel, 'ban lucas tbh')
             
