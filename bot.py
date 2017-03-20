@@ -18,7 +18,8 @@ async def on_message(message):
         async for log in client.logs_from(message.channel, limit=100):
             if log.author == message.author:
                 counter += 1
-
+                  if message.content.startswith('!ban who'):
+                        client.send_message(message.channel, 'ban lucas tbh')
         await client.edit_message(tmp, 'You have {} messages.'.format(counter))
     elif message.content.startswith('!sleep'):
         await asyncio.sleep(5)
