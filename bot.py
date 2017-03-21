@@ -34,7 +34,8 @@ async def on_message(message):
                 if log.author == message.author:
                     counter += 1
             await client.edit_message(tmp, 'You have {} messages.'.format(counter))
-
+        elif command == "ping"
+            await clinet.send_message(message.channel, 'check your own ping lazy ass)
         elif command == "sleep":
             await asyncio.sleep(5)
             await client.send_message(message.channel, 'Done sleeping')
