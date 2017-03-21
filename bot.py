@@ -61,5 +61,10 @@ async def on_message(message):
         elif command == "cleverbot":
             r = requests.get("https://www.cleverbot.com/getreply?key=%s&input=%s" % (cbkey, args))
             await client.send_message(message.channel, r.json()['output'])
+            
+            elif command == "clever":
+            r = requests.get("https://www.cleverbot.com/getreply?key=%s&input=%s" % (cbkey, args))
+            await client.send_message(message.channel, r.json()['output'])
+
 
 client.run('no')
