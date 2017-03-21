@@ -26,7 +26,10 @@ async def on_message(message):
             
         elif command == "duck":
             await client.send_message(message.channel, 'quack')
-
+        elif command == "angery"
+           await clienft.send_message(message,channel, ':angry:')
+        elif command == "sipp":
+            await client.send_message(message.channel, 'why sipp when you can s u c c')
         elif command == "test":
             counter = 0
             tmp = await client.send_message(message.channel, 'Calculating messages...')
@@ -34,8 +37,8 @@ async def on_message(message):
                 if log.author == message.author:
                     counter += 1
             await client.edit_message(tmp, 'You have {} messages.'.format(counter))
-        elif command == "ping"
-            await clinet.send_message(message.channel, 'check your own ping lazy ass)
+        elif command == "ping":
+            await client.send_message(message.channel, 'check your own ping lazy ass')
         elif command == "sleep":
             await asyncio.sleep(5)
             await client.send_message(message.channel, 'Done sleeping')
