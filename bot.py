@@ -27,12 +27,6 @@ async def on_message(message):
         elif command == "duck":
             await client.send_message(message.channel, 'quack')
             
-        elif command == "angery"
-            await client.send_message(message.channel, ':angry:')
-            
-        elif command == "sipp":
-            await client.send_message(message.channel, 'why sipp when you can s u c c')
-            
         elif command == "test":
             counter = 0
             tmp = await client.send_message(message.channel, 'Calculating messages...')
