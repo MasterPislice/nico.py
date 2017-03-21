@@ -21,7 +21,9 @@ async def on_message(message):
         #keep only the actual command from the message, remove the prefix and make it lowercase
         args = message.content.replace(command, "").replace(prefix, "")[1:]
         #the rest of the message ex: "n!haha yes mama" in this case, "yes mama" is args 
-
+        
+        #remember to always use "elif" for new commands, not "if"
+        
         if command == "banwho":
             await client.send_message(message.channel, 'ban lucas tbh')
         elif command == "sipp":
