@@ -50,5 +50,14 @@ async def on_message(message):
 
         elif command == "wew":
             await client.send_message(message.channel, 'wew lad')
+            
+        elif command == "succ":
+            await client.send_message(message.channel, 'l...lewd')
+        
+        elif message.content.startswith('sup, nico'):
+            await client.send_message(message.channel, 'YO YO YO YO! WHAT IT IS, MOTHERFUCKERS!?')
+                                      
+        elif message.content.startswith('nico nico ni'):
+            await client.send_message(message.channel, 'Stop')
 
 client.run('no')
