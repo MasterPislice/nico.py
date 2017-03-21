@@ -28,9 +28,15 @@ async def on_message(message):
         if command == "banwho":
             await client.send_message(message.channel, 'ban lucas tbh')
             
+        elif command == "sipp":
+             await client.send_message(message.channel, 'why sipp when you can s u c c')
+
         elif command == "duck":
-            await client.send_message(message.channel, 'quack')
-            
+             await client.send_message(message.channel, 'quack')
+        
+        elif command == "cheese":
+             await client.send_message(message.channel, 'http://i.imgur.com/LbDn23x.png')
+                
         elif command == "test":
             counter = 0
             tmp = await client.send_message(message.channel, 'Calculating messages...')
