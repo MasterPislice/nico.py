@@ -28,7 +28,7 @@ async def on_message(message):
             await client.send_message(message.channel, 'quack')
             
         elif command == "angery"
-           await clienft.send_message(message,channel, ':angry:')
+           await client.send_message(message,channel, ':angry:')
             
         elif command == "sipp":
             await client.send_message(message.channel, 'why sipp when you can s u c c')
