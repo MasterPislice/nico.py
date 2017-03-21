@@ -48,10 +48,10 @@ async def on_message(message):
         elif command == "succ":
             await client.send_message(message.channel, 'l...lewd')
             
-    elif message.content.lower.startswith('sup, nico') and message.author.id != client.user.id:
+    elif message.content.lower == 'sup, nico' and message.author.id != client.user.id:
         await client.send_message(message.channel, 'YO YO YO YO! WHAT IT IS, MOTHERFUCKERS!?')
         
-    elif message.content.lower.startswith('nico nico ni') and message.author.id != client.user.id:
+    elif message.content.lower == 'nico nico ni' and message.author.id != client.user.id:
         await client.send_message(message.channel, 'Stop')
 
 client.run('no')
