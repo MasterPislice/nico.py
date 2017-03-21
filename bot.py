@@ -24,7 +24,7 @@ async def on_message(message):
 
         if command == "banwho":
             await client.send_message(message.channel, 'ban lucas tbh')
-        if command == "sipp":
+        elif command == "sipp":
             await client.send_message(message.channel, 'why sipp when you can s u c c')
         elif command == "duck":
             await client.send_message(message.channel, 'quack')
