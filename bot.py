@@ -1,7 +1,10 @@
 import discord
 import asyncio
+import requests
+import json
 
 client = discord.Client()
+cbkey = 'cleverbots api key'
 
 prefix = "n!"
 
@@ -21,22 +24,12 @@ async def on_message(message):
         #keep only the actual command from the message, remove the prefix and make it lowercase
         args = message.content.replace(command, "").replace(prefix, "")[1:]
         #the rest of the message ex: "n!haha yes mama" in this case, "yes mama" is args 
-        
-        #remember to always use "elif" for new commands, not "if"
-        
-        
+
         if command == "banwho":
             await client.send_message(message.channel, 'ban lucas tbh')
-        elif command == "help":
-            await client.send_message(message.channel, 'ask mosaic, if i explained them all i would break') 
-        elif command == "sipp":
-            await client.send_message(message.channel, 'why sipp when you can s u c c')
             
         elif command == "duck":
             await client.send_message(message.channel, 'quack')
-            
-        elif command == "cheese":
-            await client.send_message(message.channel, 'http://i.imgur.com/LbDn23x.png')
             
         elif command == "test":
             counter = 0
@@ -59,10 +52,8 @@ async def on_message(message):
         elif command == "succ":
             await client.send_message(message.channel, 'l...lewd')
             
-    elif message.content.lower == 'sup, nico' and message.author.id != client.user.id:
-        await client.send_message(message.channel, 'YO YO YO YO! WHAT IT IS, MOTHERFUCKERS!?')
-        
-    elif message.content.lower == 'nico nico ni' and message.author.id != client.user.id:
-        await client.send_message(message.channel, 'Stop')
+        elif command == "cleverbot":
+            r = requests.get("https://www.cleverbot.com/getreply?key=%s&input=%s" % cbkey, args)
+            await client.send_message(message.channel, r.json()['output'])
 
 client.run('no')
