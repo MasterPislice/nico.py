@@ -28,7 +28,7 @@ async def on_message(message):
         if command == "banwho":
             await client.send_message(message.channel, 'ban lucas tbh')
         elif command == "help":
-            await client.send_message(message.channel, 'commands:  n!banwho: tells you who to ban. n!succ: the succ. n!duck: quack. n!cheese: good god man! n!test: messages. n!sleep: makes the bot sleep. n!ping: useful command. n!wew: lad. sup, nico: greets nico. nico nico ni: please dont)  
+            await client.send_message(message.channel, 'ask mosaic, if i explained them all i would break') 
         elif command == "sipp":
             await client.send_message(message.channel, 'why sipp when you can s u c c')
             
