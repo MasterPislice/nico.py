@@ -58,7 +58,7 @@ async def on_message(message):
             await client.send_message(message.channel, 'l...lewd')
             
         elif command == "cosby":
-            await client.send_message(message.channel, "There's no pudding where I'm going. https://www.youtube.com/watch?v=qSuFGey-EWo"
+            await client.send_message(message.channel, "There's no pudding where I'm going. https://www.youtube.com/watch?v=qSuFGey-EWo")
             
     elif message.content.lower == 'sup, nico' and message.author.id != client.user.id:
         await client.send_message(message.channel, 'YO YO YO YO! WHAT IT IS, MOTHERFUCKERS!?')
