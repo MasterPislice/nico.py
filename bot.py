@@ -26,9 +26,11 @@ async def on_message(message):
         #the rest of the message ex: "n!haha yes mama" in this case, "yes mama" is args 
 
         if command == "banwho":
-            await client.send_message(message.channel, 'ban mosaic imo')
+            await client.send_message(message.channel, 'ban lucas tbh')
+            
         elif command == "help":
-            await client.sned_message(message.channel, 'Hello! I am nico. I am a bot made for the fluctus server. If you need commands, ping mosaic.'
+            await client.send_message(message.channel, 'Hello! I am Nico. I am a bot made for the Fluctus servers. If you need commands, ping mosaic.'
+                                      
         elif command == "sipp":
              await client.send_message(message.channel, 'why sipp when you can s u c c')
                
@@ -39,7 +41,7 @@ async def on_message(message):
              await client.send_message(message.channel, 'http://i.imgur.com/LbDn23x.png')
        
         elif command == "angery":
-            await client.send_message(message.channel, ':angry:')
+             await client.send_message(message.channel, ':angry:')
             
         elif command == "test":
             counter = 0
@@ -61,9 +63,11 @@ async def on_message(message):
             
         elif command == "succ":
             await client.send_message(message.channel, 'l...lewd')
+                                      
         elif command == "c":
             r = requests.get("https://www.cleverbot.com/getreply?key=%s&input=%s" % (cbkey, args))
-            await client.send_message(message.channel, r.json()['output'])    
+            await client.send_message(message.channel, r.json()['output'])  
+                                      
         elif command == "cleverbot":
             r = requests.get("https://www.cleverbot.com/getreply?key=%s&input=%s" % (cbkey, args))
             await client.send_message(message.channel, r.json()['output'])
