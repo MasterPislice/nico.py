@@ -30,7 +30,8 @@ async def on_message(message):
             
         elif command == "help":
             await client.send_message(message.channel, 'Hello! I am Nico. I am a bot made for the Fluctus servers. If you need commands, ping mosaic.')
-                                      
+        elif command == "cool":
+            await client.sned_message(message.channel, 'cool and good')
         elif command == "sipp":
              await client.send_message(message.channel, 'why sipp when you can s u c c')
                
