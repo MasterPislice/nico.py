@@ -26,17 +26,20 @@ async def on_message(message):
         #the rest of the message ex: "n!haha yes mama" in this case, "yes mama" is args 
 
         if command == "banwho":
-            await client.send_message(message.channel, 'ban lucas tbh')
+            await client.send_message(message.channel, 'ban mosaic imo')
             
         elif command == "sipp":
              await client.send_message(message.channel, 'why sipp when you can s u c c')
-
+               
         elif command == "duck":
              await client.send_message(message.channel, 'quack')
         
         elif command == "cheese":
              await client.send_message(message.channel, 'http://i.imgur.com/LbDn23x.png')
-                
+       
+        elif command == "angery":
+            await client.send_message(message.channel, ':angry:')
+            
         elif command == "test":
             counter = 0
             tmp = await client.send_message(message.channel, 'Calculating messages...')
