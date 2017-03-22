@@ -40,8 +40,7 @@ async def on_message(message):
         
         elif command == "cheese":
              await client.send_message(message.channel, 'http://i.imgur.com/LbDn23x.png')
-        elif command ==  "itship":
-            await cliend.send_message(message.channel, 'to fuck bees')
+
         elif command == "angery":
              await client.send_message(message.channel, ':angry:')
             
