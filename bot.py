@@ -27,7 +27,13 @@ async def on_message(message):
 
         if command == "banwho":
             await client.send_message(message.channel, 'ban lucas tbh')
+       
+       elif command == "igger":
+             await client.send_message(message.channel, 'thats racist')
+        elif command == "gger":
+              await client.send_message(message.channel, 'thats racist')
             
+       
         elif command == "help":
             await client.send_message(message.channel, 'Hello! I am Nico. I am a bot made for the Fluctus servers. If you need commands, ping mosaic.')
                                       
