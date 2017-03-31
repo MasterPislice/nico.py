@@ -5,6 +5,7 @@ import json
 
 client = discord.Client()
 cbkey = 'cleverbots api key'
+ocrkey = 'ocrspaces api key'
 
 prefix = "n!"
 
@@ -76,6 +77,10 @@ async def on_message(message):
         elif command == "clever":
             r = requests.get("https://www.cleverbot.com/getreply?key=%s&input=%s" % (cbkey, args))
             await client.send_message(message.channel, r.json()['output'])
+            
+        elif command == "ocr":
+            r= requests.get("https://api.ocr.space/parse/imageurl?apikey=%s&url=%s" % (ocrkey, args))
+            await client.send_message(message.channel, r.json()['ParsedText'])
 
 
 client.run('no')
