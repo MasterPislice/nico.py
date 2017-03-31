@@ -80,7 +80,7 @@ async def on_message(message):
             
         elif command == "ocr":
             r= requests.get("https://api.ocr.space/parse/imageurl?apikey=%s&url=%s" % (ocrkey, args))
-            await client.send_message(message.channel, r.json()['ParsedText'])
+            await client.send_message(message.channel, r.content.decode)
 
 
 client.run('no')
