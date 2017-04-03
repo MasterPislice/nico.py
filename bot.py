@@ -80,7 +80,10 @@ async def on_message(message):
             
         elif command == "ocr":
             r= requests.get("https://api.ocr.space/parse/imageurl?apikey=%s&url=%s" % (ocrkey, args))
-            await client.send_message(message.channel, r.json()['ParsedResults'][0]['ParsedText'])
+            try await client.send_message(message.channel, r.json()['ParsedResults'][0]['ParsedText'])
+                pass
+            except HTTPException:
+                await client.send_message(message.channel, "No text found. If this error persists, ping Mosaic.")
 
 
 client.run('no')
