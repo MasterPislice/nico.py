@@ -30,39 +30,14 @@ async def on_message(message):
             await client.send_message(message.channel, 'ban lucas tbh')
             
         elif command == "help":
-            await client.send_message(message.channel, 'Hello! I am Nico. I am a bot made for the Fluctus servers. If you need commands, ping mosaic.')
-        elif command == "cool":
-            await client.sned_message(message.channel, 'cool and good')
-        elif command == "sipp":
-             await client.send_message(message.channel, 'why sipp when you can s u c c')
-               
+            await client.send_file(message.channel, "help.png")
+
         elif command == "duck":
              await client.send_message(message.channel, 'quack')
         
         elif command == "cheese":
              await client.send_message(message.channel, 'http://i.imgur.com/LbDn23x.png')
 
-        elif command == "angery":
-             await client.send_message(message.channel, ':angry:')
-            
-        elif command == "test":
-            counter = 0
-            tmp = await client.send_message(message.channel, 'Calculating messages...')
-            async for log in client.logs_from(message.channel, limit=100):
-                if log.author == message.author:
-                    counter += 1
-            await client.edit_message(tmp, 'You have {} messages.'.format(counter))
-            
-        elif command == "ping":
-            await client.send_message(message.channel, 'check your own ping lazy ass')
-            
-        elif command == "sleep":
-            await asyncio.sleep(5)
-            await client.send_message(message.channel, 'Done sleeping')
-
-        elif command == "wew":
-            await client.send_message(message.channel, 'wew lad')
-            
         elif command == "succ":
             await client.send_message(message.channel, 'l...lewd')
                                       
