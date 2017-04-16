@@ -60,6 +60,22 @@ async def on_message(message):
                 await client.send_message(message.channel, r.json()['ParsedResults'][0]['ParsedText'])
             else:
                 await client.send_message(message.channel, "No text found. If this error persists, ping Mosaic or one of the GitHub contributors.")
+        
+        elif command == "moozy":
+            userch = message.author.voice_channel
+            if userch is None:
+                await client.send_message(message.channel, "Please join a voice channel before using this command.")
+                return
+            else:
+                waitpls = await client.send_message(message.channel, "Please wait...")
+                voice = await client.join_voice_channel(userch)
+                player = await voice.create_ytdl_player(args)
+                player.start()
+                await client.edit_message(waitpls, "**Now playing:** %s" % player.title)
+                while player.is_done() == False:
+                    pass
+                await client.edit_message(waitpls, "**Finished playing:** %s" % player.title)
+                await voice.disconnect()
 
 
 client.run('no')
