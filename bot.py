@@ -1,4 +1,4 @@
-#Nico.py Version 1.0.1
+#Nico.py Development Version 1A
 
 import discord
 import asyncio
@@ -17,7 +17,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-    await client.change_status(game=discord.Game(name='Version 1.0.1'))
+    await client.change_status(game=discord.Game(name='Development Ver. 1A'))
    
 
 @client.event
