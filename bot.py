@@ -1,4 +1,4 @@
-#Nico.py Development Version 1A
+#Nico.py Development Version 1B
 
 import discord
 import asyncio
@@ -6,8 +6,8 @@ import requests
 import json
 
 client = discord.Client()
-cbkey = 'no'
-ocrkey = 'いいえ'
+cbkey = 'cool cat loves to boogie woogie'
+ocrkey = 'no'
 
 prefix = "n!"
 
@@ -17,8 +17,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-    await client.change_status(game=discord.Game(name='Development Ver. 1A'))
-   
+    await client.change_status(game=discord.Game(name='Development Ver. 1B'))   
 
 @client.event
 async def on_message(message):
@@ -43,7 +42,16 @@ async def on_message(message):
 
         elif command == "succ":
             await client.send_message(message.channel, 'l...lewd')
-                                      
+
+        elif command == "nigra":
+            await client.send_message(message.channel, 'https://www.youtube.com/watch?v=V4jH0WeV67I')
+
+        elif command == "igra":
+            await client.send_message(message.channel, 'https://www.youtube.com/watch?v=V4jH0WeV67I')
+
+        elif command == "gra":
+            await client.send_message(message.channel, 'https://www.youtube.com/watch?v=V4jH0WeV67I')
+            
         elif command == "c":
             r = requests.get("https://www.cleverbot.com/getreply?key=%s&input=%s" % (cbkey, args))
             await client.send_message(message.channel, r.json()['output'])  
@@ -64,22 +72,6 @@ async def on_message(message):
             else:
                 await client.send_message(message.channel, "No text found. If this error persists, ping Mosaic or one of the GitHub contributors.")
         
-        elif command == "music":
-            userch = message.author.voice_channel
-            if userch is None:
-                await client.send_message(message.channel, "Please join a voice channel before using this command.")
-                return
-            else:
-                waitpls = await client.send_message(message.channel, "Please wait...")
-                voice = await client.join_voice_channel(userch)
-                player = await voice.create_ytdl_player(args)
-                player.start()
-                await client.edit_message(waitpls, "**Now playing:** %s" % player.title)
-                while player.is_done() == False:
-                    pass
-                await client.edit_message(waitpls, "**Finished playing:** %s" % player.title)
-                await voice.disconnect()
-                
         elif command == "moozy":
             userch = message.author.voice_channel
             if userch is None:
@@ -96,5 +88,20 @@ async def on_message(message):
                 await client.edit_message(waitpls, "**Finished playing:** %s" % player.title)
                 await voice.disconnect()
 
+        elif command == "music":
+            userch = message.author.voice_channel
+            if userch is None:
+                await client.send_message(message.channel, "Please join a voice channel before using this command.")
+                return
+            else:
+                waitpls = await client.send_message(message.channel, "Please wait...")
+                voice = await client.join_voice_channel(userch)
+                player = await voice.create_ytdl_player(args)
+                player.start()
+                await client.edit_message(waitpls, "**Now playing:** %s" % player.title)
+                while player.is_done() == False:
+                    pass
+                await client.edit_message(waitpls, "**Finished playing:** %s" % player.title)
+                await voice.disconnect()
 
-client.run('Нет')
+client.run('nico nico niiiiii~~~')
