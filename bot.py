@@ -1,4 +1,4 @@
-#Nico.py Version 1.0
+#Nico.py Version 1.0.1
 
 import discord
 import asyncio
@@ -7,7 +7,7 @@ import json
 
 client = discord.Client()
 cbkey = 'no'
-ocrkey = 'no'
+ocrkey = 'いいえ'
 
 prefix = "n!"
 
@@ -17,6 +17,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
+    await client.change_status(game=discord.Game(name='Version 1.0.1'))
    
 
 @client.event
@@ -32,39 +33,14 @@ async def on_message(message):
             await client.send_message(message.channel, 'ban lucas tbh')
             
         elif command == "help":
-            await client.send_message(message.channel, 'Hello! I am Nico. I am a bot made for the Fluctus servers. If you need commands, ping mosaic.')
-        elif command == "cool":
-            await client.sned_message(message.channel, 'cool and good')
-        elif command == "sipp":
-             await client.send_message(message.channel, 'why sipp when you can s u c c')
-               
+            await client.send_file(message.channel, "help.png")
+
         elif command == "duck":
              await client.send_message(message.channel, 'quack')
         
         elif command == "cheese":
              await client.send_message(message.channel, 'http://i.imgur.com/LbDn23x.png')
 
-        elif command == "angery":
-             await client.send_message(message.channel, ':angry:')
-            
-        elif command == "test":
-            counter = 0
-            tmp = await client.send_message(message.channel, 'Calculating messages...')
-            async for log in client.logs_from(message.channel, limit=100):
-                if log.author == message.author:
-                    counter += 1
-            await client.edit_message(tmp, 'You have {} messages.'.format(counter))
-            
-        elif command == "ping":
-            await client.send_message(message.channel, 'check your own ping lazy ass')
-            
-        elif command == "sleep":
-            await asyncio.sleep(5)
-            await client.send_message(message.channel, 'Done sleeping')
-
-        elif command == "wew":
-            await client.send_message(message.channel, 'wew lad')
-            
         elif command == "succ":
             await client.send_message(message.channel, 'l...lewd')
                                       
@@ -81,8 +57,44 @@ async def on_message(message):
             await client.send_message(message.channel, r.json()['output'])
             
         elif command == "ocr":
-            r= requests.get("https://api.ocr.space/parse/imageurl?apikey=%s&url=%s" % (ocrkey, args))
-            await client.send_message(message.channel, r.json()['ParsedResults'][0]['ParsedText'])
+            r = requests.get("https://api.ocr.space/parse/imageurl?apikey=%s&url=%s" % (ocrkey, args))
+
+            if len(r.json()['ParsedResults'][0]['ParsedText']) > 0:
+                await client.send_message(message.channel, r.json()['ParsedResults'][0]['ParsedText'])
+            else:
+                await client.send_message(message.channel, "No text found. If this error persists, ping Mosaic or one of the GitHub contributors.")
+        
+        elif command == "music":
+            userch = message.author.voice_channel
+            if userch is None:
+                await client.send_message(message.channel, "Please join a voice channel before using this command.")
+                return
+            else:
+                waitpls = await client.send_message(message.channel, "Please wait...")
+                voice = await client.join_voice_channel(userch)
+                player = await voice.create_ytdl_player(args)
+                player.start()
+                await client.edit_message(waitpls, "**Now playing:** %s" % player.title)
+                while player.is_done() == False:
+                    pass
+                await client.edit_message(waitpls, "**Finished playing:** %s" % player.title)
+                await voice.disconnect()
+                
+        elif command == "moozy":
+            userch = message.author.voice_channel
+            if userch is None:
+                await client.send_message(message.channel, "Please join a voice channel before using this command.")
+                return
+            else:
+                waitpls = await client.send_message(message.channel, "Please wait...")
+                voice = await client.join_voice_channel(userch)
+                player = await voice.create_ytdl_player(args)
+                player.start()
+                await client.edit_message(waitpls, "**Now playing:** %s" % player.title)
+                while player.is_done() == False:
+                    pass
+                await client.edit_message(waitpls, "**Finished playing:** %s" % player.title)
+                await voice.disconnect()
 
 
-client.run('no')
+client.run('Нет')
