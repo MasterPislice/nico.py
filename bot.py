@@ -29,7 +29,10 @@ async def on_message(message):
         #the rest of the message ex: "n!haha yes mama" in this case, "yes mama" is args 
 
         if command == "banwho":
-            await client.send_message(message.channel, 'ban lucas tbh')
+            await client.send_message(message.channel, 'ban mosaic imo')
+            
+            elif command == "unbanwho":
+            await client.send_message(message.channel, 'unban lucas smh')
             
         elif command == "help":
             await client.send_file(message.channel, "help.png")
